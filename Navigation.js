@@ -18,7 +18,7 @@ const Stack = createStackNavigator();
 function Navigation() {
     return (
         < NavigationContainer >
-            <Stack.Navigator initialRouteName="TelaInicial" screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName="TelaInicial" screenOptions={{ headerShown: true }}>
                 <Stack.Screen name="TelaInicial" component={TelaInicial} />
                 <Stack.Screen name="TelaSelect" component={TelaSelect} />      
                 <Stack.Screen name="TelaInsert" component={TelaInsert} />

@@ -4,16 +4,15 @@ import css from './estilo/estilo';
 import axios from 'axios';
 
 function TelaInsert({ navigation }) {
-  const [nome, setNome] = useState('');
-  const [valor, setValor] = useState('');
-  const [imagem, setImagem] = useState('');
-  const [quantidade, setQuantidade] = useState('');
+  const [receitas, setReceitas] = useState('');
+  const [despesas, setDespesas] = useState('');
+  const [obs, setObs] = useState('');
 
   cadastrar = () => {
     let token = 'Q!W@ee344%%R';
-    if (nome.trim() !== '' && valor.trim() !== '' && quantidade.trim() !== '') {
-      alert(nome + '\n cadastrado com sucesso!');
-      axios.post('http://192.168.56.2/api/insert/', {token,nome,valor,imagem,quantidade})
+    if (receitas.trim() !== '' && despesas.trim() !== '' && obs.trim() !== '') {
+      alert(receitas + '\n cadastrado com sucesso!');
+      axios.post('http://192.168.56.2/api/insert/', {token,receitas,despesas,obs})
      // axios.post('https://api.semlimite.app.br/insert/', { token, nome, valor, imagem, quantidade })
         .then(response => {
           const data = response.data;
@@ -28,10 +27,9 @@ function TelaInsert({ navigation }) {
     }
   }
   limpar = () => {
-    setImagem('');
-    setNome('');
-    setValor('');
-    setQuantidade('');
+    setReceitas('');
+    setDespesas('');
+    setObs('');
   }
   return (
     <View style={css.container}>
@@ -41,16 +39,14 @@ function TelaInsert({ navigation }) {
       <Image source={require('./assets/logo2.png')} style={css.logox}></Image>
       </TouchableOpacity>
       
-      <Text>NovoCadastro</Text>
+      <Text>Novo Orçamento</Text>
       <View>
-        <Text>Produto</Text>
-        <TextInput placeholder="Produto" style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
-        <Text>Valor</Text>
-        <TextInput placeholder="0.00" style={css.campo} onChangeText={(text) => setValor(text)} value={valor}></TextInput>
-        <Text>Produto</Text>
-        <TextInput placeholder="URL da imagem" style={css.campo} onChangeText={(text) => setImagem(text)} value={imagem}></TextInput>
-        <Text>Quantidade</Text>
-        <TextInput placeholder="" style={css.campo} onChangeText={(text) => setQuantidade(text)} value={quantidade}></TextInput>
+        <Text>Receitas</Text>
+        <TextInput placeholder="Produto" style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas}></TextInput>
+        <Text>Despesas</Text>
+        <TextInput placeholder="0.00" style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas}></TextInput>
+        <Text>Observações</Text>
+        <TextInput placeholder="0.00" style={css.campo} onChangeText={(text) => setObs(text)} value={obs}></TextInput>
         <View style={css.viewbotoes}>
           <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
           <View><Button title="Adicionar Produto" color='#154360' onPress={cadastrar} /></View>
