@@ -10,9 +10,11 @@ if (!empty($token)) {
 		if($token === 'Q!W@ee344%%R'){
 		//$response = array('success' => true, 'message' => 'ok');
        // echo json_encode($response);
+	   
 	 // Conectar ao banco de dados		
+//require '../bancocasa.php';
+require '../../../bancoservidor.php';
 
-require '../bancosenac.php';
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
@@ -25,20 +27,20 @@ try {
 	
 	
     $nome = $data['nome'];
-    $login = $data['login'];
-    $senha = $data['senha'];
+    $valor = $data['valor'];
+    $imagem = $data['imagem'];
+    $quantidade = $data['quantidade'];
 	$tempo = date("Y-m-d H:i:s");
 	
 	
     // Inserir os dados na tabela 'usuario'
-    $sql = "INSERT INTO usuario(nome,login,senha,data) VALUES (:nome,:login,:senha,:tempo)";
+    $sql = "INSERT INTO produto (nome,valor,imagem,tempo,quantidade,apagado) VALUES (:nome,:valor,:imagem,:tempo,:quantidade,0)";
     $stmt = $pdo->prepare($sql);
-	$stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':login', $login);    
-    $stmt->bindParam(':senha', $senha);
-    //$stmt->bindParam(':imagem', $imagem);
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':valor', $valor);
+    $stmt->bindParam(':imagem', $imagem);
     $stmt->bindParam(':tempo', $tempo);
-    //$stmt->bindParam(':quantidade', $quantidade);
+    $stmt->bindParam(':quantidade', $quantidade);
     $stmt->execute();
 
     // Retornar uma resposta ao aplicativo
@@ -51,7 +53,7 @@ try {
 }
 	   
 	   // Fecha a conexão com o banco de dados
-//$conn->close();
+$conn->close();
 	   
 		}
 		else{

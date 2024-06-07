@@ -12,11 +12,12 @@ if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
+$nome = $_GET['nome'];
 $login = $_GET['login'];
 $senha = $_GET['senha'];
 
 // Consulta SQL para selecionar todos os dados da tabela usuario
-$sql = "SELECT id,login FROM `usuario` where `login`='".$login."' and `senha`='".$senha."' limit 1";
+$sql = "SELECT id,nome,login FROM `usuario` where `login`='".$login."' and `senha`='".$senha."' limit 1";
 $result = $conn->query($sql);
 //print_r($result);
 // Verifica se há resultados para a consulta
