@@ -26,7 +26,7 @@ try {
 	
    
     //$sql = "INSERT INTO avaliacao (titulo,nota,mensagem,tempo) VALUES (:titulo,:nota,:mensagem,:tempo)";
-    echo $sql = "UPDATE `produto` SET `apagado` = '1', dt_delete=:tempo WHERE (`id` = :a) limit 1";
+    echo $sql = "UPDATE `orcamento` SET `delecao` = '1', dt_delete=:tempo WHERE (`id` = :a) limit 1";
 	$stmt = $pdo->prepare($sql);
     $stmt->bindParam(':a', $a);   
     $stmt->bindParam(':tempo', $tempo);

@@ -36,8 +36,8 @@ function TelaDelete({ navigation }) {
 
   const apagar = (a, b) => {
     Alert.alert(
-      'Cuidado!!!',
-      'confirma apagar o produto? \n Id:' + a + '\n' + b + '',
+      'Atenção!',
+      'Apagar o orçamento? \n Id:' + a + '\n' + b + '',
       [
         {
           text: 'Sim',
@@ -61,7 +61,7 @@ function TelaDelete({ navigation }) {
         <Image source={require('./assets/logo2.png')} style={css.logox}></Image>
       </TouchableOpacity>
       <Text></Text>
-      <Text>Apagar Cadastro</Text>
+      <Text>Apagar Orçamento</Text>
       <FlatList
         data={users}
         keyExtractor={item => item.id.toString()}
@@ -75,7 +75,7 @@ function TelaDelete({ navigation }) {
               </View>
 
               <View style={css.principal}>
-                <View style={css.viewnumero3}>
+                {/* <View style={css.viewnumero3}>
                   <View>
                     {
                       item.imagem == "" ? (
@@ -85,11 +85,12 @@ function TelaDelete({ navigation }) {
                       )
                     }
                   </View>
-                </View>
+                </View> */}
                 <View style={css.viewletra}>
-                  <Text style={css.letra3}>Produto: {item.nome}</Text>
-                  <Text style={css.letra3}>Quantidade: {item.quantidade}</Text>
-                  <Text style={css.letra3}>Valor: R$ {item.valor}</Text>
+                  <Text style={css.letra3}>Orçamento: {item.nome}</Text>
+                  <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>
+                  <Text style={css.letra3}>Despesas: R$ {item.despesas}</Text>
+                  <Text style={css.letra3}>Observações: {item.obs}</Text>
                   <Text style={css.letra3}>{item.tempo}</Text>
                 </View>
               </View>
