@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 $igor = $_GET['id'];
 
 // Consulta SQL para selecionar todos os dados da tabela usuario
-$sql = "SELECT * FROM produto where apagado=0 and id=".$igor." order by id desc";
+$sql = "SELECT * FROM orcamento where delecao=0 and id=".$igor." order by id desc";
 $result = $conn->query($sql);
 //print_r($result);
 // Verifica se há resultados para a consulta
@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
 	
 } else {
     // Se não houver resultados, retorna uma mensagem de erro
-    echo "Nenhum usuário encontrado.";
+    echo "Nenhum orçamento encontrado.";
 }
 
 // Fecha a conexão com o banco de dados
