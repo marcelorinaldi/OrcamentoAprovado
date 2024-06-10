@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para selecionar todos os dados da tabela usuario
-$sql = "SELECT * FROM produto where apagado=0 order by id desc";
+$sql = "SELECT * FROM orcamento_aprovado.orcamento order by id desc";
 $result = $conn->query($sql);
 //print_r($result);
 // Verifica se há resultados para a consulta

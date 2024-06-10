@@ -23,28 +23,26 @@ try {
     // Receber os dados do aplicativo
     $data = json_decode(file_get_contents('php://input'), true);
 	
-		
-	
-	
+
     $nome = $data['nome'];
-    $valor = $data['valor'];
-    $imagem = $data['imagem'];
-    $quantidade = $data['quantidade'];
-	$tempo = date("Y-m-d H:i:s");
+    $receitas = $data['receitas'];
+    $despesas = $data['despesas'];
+    $obs = $data['obs'];
+	$data = date("Y-m-d H:i:s");
 	
 	
     // Inserir os dados na tabela 'usuario'
-    $sql = "INSERT INTO produto (nome,valor,imagem,tempo,quantidade,apagado) VALUES (:nome,:valor,:imagem,:tempo,:quantidade,0)";
+    $sql = "INSERT INTO orcamento (nome,receitas,despesas,obs,data) VALUES (:nome,:receitas,:despesas,:obs,:data)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':valor', $valor);
-    $stmt->bindParam(':imagem', $imagem);
-    $stmt->bindParam(':tempo', $tempo);
-    $stmt->bindParam(':quantidade', $quantidade);
+    $stmt->bindParam(':receitas', $receitas);
+    $stmt->bindParam(':despesas', $despesas);
+    $stmt->bindParam(':obs', $obs);
+    $stmt->bindParam(':data', $data);
     $stmt->execute();
 
     // Retornar uma resposta ao aplicativo
-    $response = array('success' => true, 'message' => ''.$tempo.', Produto cadastrado');
+    $response = array('success' => true, 'message' => ''.$data.', Produto cadastrado');
     echo json_encode($response);
 } catch (PDOException $e) {
     // Em caso de erro, retornar uma mensagem de erro

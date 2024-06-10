@@ -151,6 +151,17 @@ export default StyleSheet.create({
         //alignItems: 'center',
         //justifyContent: 'center',
     },
+    scroll: {
+        backgroundColor: 'white',
+        borderColor: 'black',
+        borderWidth: 0.5,
+        height: 100,
+        width: 350,
+        textAlign: "center",
+        marginBottom: 10,
+        //alignItems: 'center',
+        //justifyContent: 'center',
+    },
     viewbotoes: {
         //backgroundColor: 'yellow',        
         width: '95%',
