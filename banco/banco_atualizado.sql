@@ -26,12 +26,16 @@ DROP TABLE IF EXISTS `orcamento`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orcamento` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
   `receitas` varchar(45) DEFAULT NULL,
   `despesas` varchar(45) DEFAULT NULL,
   `obs` varchar(100) DEFAULT NULL,
+  `delecao` varchar(45) DEFAULT NULL,
   `data` datetime DEFAULT NULL,
+  `dt_delete` datetime DEFAULT NULL,
+  `dt_edicao` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +44,7 @@ CREATE TABLE `orcamento` (
 
 LOCK TABLES `orcamento` WRITE;
 /*!40000 ALTER TABLE `orcamento` DISABLE KEYS */;
-INSERT INTO `orcamento` VALUES (1,'2000','1000','gastos do mes','2024-06-07 11:00:00');
+INSERT INTO `orcamento` VALUES (1,'ORÇAMENTO EDITA','1000EDITA','2000EDITA','OBSEDITA','0','2024-06-10 10:11:32','2024-06-10 11:10:04',NULL),(2,'NOME_TESTE2','RECEITAS_TESTE2','DESPESAS_TESTE2','OBS_TESTE2','0','2024-06-10 10:15:52','2024-06-10 11:12:23',NULL);
 /*!40000 ALTER TABLE `orcamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +63,7 @@ CREATE TABLE `usuario` (
   `data` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login_UNIQUE` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +72,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'admin','admin','123','2024-06-07 10:17:00');
+INSERT INTO `usuario` VALUES (1,'admin','admin','123','2024-06-07 10:17:00'),(2,'NOME_TESTE','LOGIN_TESTE','SENHA_TESTE','2024-06-10 10:20:29'),(3,'NOME_TESTE2','LOGIN_TESTE2','SENHA_TESTE2','2024-06-10 10:23:50');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +85,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-07 11:20:25
+-- Dump completed on 2024-06-10 11:15:30
