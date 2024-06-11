@@ -26,7 +26,7 @@ function TelaSelect({ navigation }) {
         <Image source={require('./assets/logo2.png')} style={css.logox} />
       </TouchableOpacity>
       <Text></Text>
-      <Text>Quantidade de Registros: {users.length}</Text>
+      <Text style={css.text}>Orçamentos cadastrados: {users.length}</Text>
       <FlatList
         data={users}
         keyExtractor={item => item.id.toString()}

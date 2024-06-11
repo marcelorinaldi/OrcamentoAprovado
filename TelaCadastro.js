@@ -50,7 +50,7 @@ return (
       <Image source={require('./assets/logo2.png')} style={css.logox}></Image>
     </TouchableOpacity>
 
-    <Text>Novo Cadastro</Text>
+    <Text>Novo Usuário</Text>
     <View>
       <Text>Nome</Text>
       <TextInput placeholder="" style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>

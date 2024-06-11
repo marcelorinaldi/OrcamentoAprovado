@@ -8,85 +8,74 @@ function TelaLogin({ navigation }) {
   const [senhax, setSenhax] = useState('');
   const [users, setUsers] = useState([]);
 
-
   const [id, setId] = useState('');
   const [nome, setNome] = useState('');
-
-  
 
   useEffect(() => {
     setLoginx('');
     setSenhax('');
   }, []);
 
-
   let token = 'Q!W@ee344%%R';
 
   const autenticar = () => {
-    //axios.get(`https://api.semlimite.app.br/select_login/?token=${token}&login=${loginx}&senha=${senhax}`)
-        axios.get(`http://192.168.56.2/api/select_login/?token=${token}&login=${loginx}&senha=${senhax}`)    
+    axios.get(`http://192.168.56.2/api/select_login/?token=${token}&login=${loginx}&senha=${senhax}`)
       .then(response => {
-        setUsers(response.data);
-        console.log(users);
-        if (users && users.length > 0) {
-          const primeiroItem = users[0]; // Vamos extrair dados apenas do primeiro item por enquanto
+        const data = response.data;
+        console.log('API Response:', data);
+        setUsers(data);
+
+        if (data && data.length > 0) {
+          const primeiroItem = data[0];
           const { id, nome } = primeiroItem;
           setNome(nome);
           setId(id);
-          //console.log('ok' + id + '|' + nome);
           navigation.navigate('TelaInicial', { id, nome });
+        } else {
+          alert('Login ou senha incorretos.');
         }
-        //if(users==1){
-          //alert('Tudo Errado Fio =)');
-        //}
       })
       .catch(error => {
-        console.error(error);
+        console.error('Network error:', error);
+        alert('Erro de rede. Por favor, tente novamente mais tarde.');
       });
   }
 
-  logar = () => {
+  const logar = () => {
     if (loginx.trim() !== '' && senhax.trim() !== '') {
       autenticar();
     } else {
-      alert('Preencher Campos!!!');
+      alert('Por favor, preencha os campos!');
     }
-
   }
 
-  limpar = () => {
+  const limpar = () => {
     setLoginx('');
     setSenhax('');
   }
 
-
-  //console.log(login);
-  // console.log(senha);
   return (
     <View style={css.container}>
       <Text> </Text>
       <Text> </Text>
 
-      <Image source={require('./assets/logo2.png')} style={css.logox}></Image>
+      <Image source={require('./assets/orcamento.png')} style={css.logo} />
 
-
-      <Text>Autenticação</Text>
+      <Text>Bem vindo! Faça login ou cadastre-se!</Text>
       <View>
         <Text>Login</Text>
-        <TextInput placeholder="" style={css.campo} onChangeText={(text) => setLoginx(text)} value={loginx}></TextInput>
+        <TextInput placeholder="" style={css.campo} onChangeText={(text) => setLoginx(text)} value={loginx} />
         <Text>Senha</Text>
-        <TextInput placeholder="" style={css.campo} onChangeText={(text) => setSenhax(text)} value={senhax}></TextInput>
+        <TextInput placeholder="" style={css.campo} onChangeText={(text) => setSenhax(text)} value={senhax} secureTextEntry={true} />
         <View style={css.viewbotoes}>
           <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
           <View><Button title="Login" color='#154360' onPress={logar} /></View>
-          <View>
-            <Button title='Cadastro' color='#154360' onPress={() => navigation.navigate('TelaCadastro')}></Button>
-          </View>
+          <View><Button title='Cadastro' color='#154360' onPress={() => navigation.navigate('TelaCadastro')} /></View>
         </View>
       </View>
       <Text> </Text>
     </View>
   );
 }
-export default TelaLogin;
 
+export default TelaLogin;

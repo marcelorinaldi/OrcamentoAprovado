@@ -17,7 +17,8 @@ function TelaInicial({ navigation, route }) {
 
   return (
     <View style={css.container}>
-      <Image source={require('./assets/logo1.jpg')} style={css.logo}></Image>
+      <Text style={css.text}>Administrador: {nome}</Text>
+      <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
       <View style={css.principal}>
         <View>
           <Button title='Novo Usuário' color='#154360' onPress={() => navigation.navigate('TelaCadastro')}></Button>

@@ -9,7 +9,7 @@ export default StyleSheet.create({
     },
     logo: {
         marginBottom: 20,
-         width:250,
+         width:300,
         height:300
     },
     logox: {
@@ -172,5 +172,11 @@ export default StyleSheet.create({
         gap: 7,
         alignItems: 'center',
         justifyContent: 'center',
+        color: 'white',
     },
+
+    text: {
+        color: 'green',
+        fontWeight: 'bold',
+    }
 });
