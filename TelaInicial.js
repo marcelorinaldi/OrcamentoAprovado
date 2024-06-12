@@ -18,20 +18,26 @@ function TelaInicial({ navigation, route }) {
   return (
     <View style={css.container}>
       <Text style={css.text}>Administrador: {nome}</Text>
+      <Text> </Text>
+      <Text> </Text>
       <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+        <View style={css.principal}>
+          <View>
+            <Button title='Novo Usuário' color='#154360' onPress={() => navigation.navigate('TelaCadastro')}></Button>
+          </View>
+          <View>
+            <Button title='Select' color='#154360' onPress={() => navigation.navigate('TelaSelect')}></Button>
+          </View>
+        </View>
+        <View style={css.principal}>
+          <View>
+            <Button title='Novo Orçamento' color='#154360' onPress={() => navigation.navigate('TelaInsert')}></Button>
+          </View>
+          <View>
+            <Button title='Delete' color='#154360' onPress={() => navigation.navigate('TelaDelete')}></Button>
+          </View>
+        </View>
       <View style={css.principal}>
-        <View>
-          <Button title='Novo Usuário' color='#154360' onPress={() => navigation.navigate('TelaCadastro')}></Button>
-        </View>
-        <View>
-          <Button title='Select' color='#154360' onPress={() => navigation.navigate('TelaSelect')}></Button>
-        </View>
-        <View>
-          <Button title='Novo Orçamento' color='#154360' onPress={() => navigation.navigate('TelaInsert')}></Button>
-        </View>
-        <View>
-          <Button title='Delete' color='#154360' onPress={() => navigation.navigate('TelaDelete')}></Button>
-        </View>
         <View>
           <Button title='Sair' color='#154360' onPress={() => navigation.navigate('TelaLogin')}></Button>
         </View>
@@ -40,6 +46,7 @@ function TelaInicial({ navigation, route }) {
         </View>
       </View>
     </View>
+
   );
 }
 export default TelaInicial;

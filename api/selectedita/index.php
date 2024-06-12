@@ -103,8 +103,3 @@ $conn->close();
 	$response = array('success' => true, 'message' => 'Nok_2');
         echo json_encode($response);
 }
-
-?>   
-
-
-

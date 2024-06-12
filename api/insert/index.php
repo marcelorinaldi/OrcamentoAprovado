@@ -32,7 +32,7 @@ try {
 	
 	
     // Inserir os dados na tabela 'usuario'
-    $sql = "INSERT INTO orcamento (nome,receitas,despesas,obs,data) VALUES (:nome,:receitas,:despesas,:obs,:data)";
+    $sql = "INSERT INTO orcamento (nome,receitas,despesas,obs,delecao,data) VALUES (:nome,:receitas,:despesas,:obs,0,:data)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':receitas', $receitas);

@@ -23,7 +23,7 @@ function TelaSelect({ navigation }) {
       <Text> </Text>
       <Text> </Text>
       <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-        <Image source={require('./assets/logo2.png')} style={css.logox} />
+        <Image source={require('./assets/orcamento.png')} style={css.logox} />
       </TouchableOpacity>
       <Text></Text>
       <Text style={css.text}>Orçamentos cadastrados: {users.length}</Text>

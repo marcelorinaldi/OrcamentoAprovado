@@ -1,6 +1,6 @@
 <?php
 // Conectar ao banco de dados
-//date_default_timezone_set('America/Sao_Paulo');
+date_default_timezone_set('America/Sao_Paulo');
 
 $datax = json_decode(file_get_contents('php://input'), true);
 $token = $datax['token'];
@@ -28,13 +28,14 @@ try {
 	
    
     //$sql = "INSERT INTO avaliacao (titulo,nota,mensagem,tempo) VALUES (:titulo,:nota,:mensagem,:tempo)";
-    $sql = "UPDATE `orcamento` SET `nome` = :nome, `receitas`=:receitas,`despesas`=:despesas,`obs`=:obs WHERE (`id` = :a) limit 1";
+    $sql = "UPDATE `orcamento` SET `nome` = :nome, `receitas`=:receitas,`despesas`=:despesas,`obs`=:obs, dt_edicao=:tempo WHERE (`id` = :a) limit 1";
 	$stmt = $pdo->prepare($sql);
     $stmt->bindParam(':a', $a);
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':receitas', $receitas);
     $stmt->bindParam(':despesas', $despesas);
     $stmt->bindParam(':obs', $obs);
+    $stmt->bindParam(':tempo', $tempo);
     //$stmt->bindParam(':b', $b);
     //$stmt->bindParam(':tempo', $tempo);
     $stmt->execute();

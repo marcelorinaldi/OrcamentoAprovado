@@ -1,9 +1,8 @@
 <?php
 
 	 // Conectar ao banco de dados		
-//require '../bancocasa.php';
 require '../bancosenac.php';
-//require '../../../bancoservidor.php';
+
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
@@ -55,10 +54,3 @@ if ($result->num_rows > 0) {
 
 // Fecha a conexão com o banco de dados
 //$conn->close();
-
-
-	
-?>   
-
-
-

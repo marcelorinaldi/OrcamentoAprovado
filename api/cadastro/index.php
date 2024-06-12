@@ -21,9 +21,6 @@ try {
     // Receber os dados do aplicativo
     $data = json_decode(file_get_contents('php://input'), true);
 	
-		
-	
-	
     $nome = $data['nome'];
     $login = $data['login'];
     $senha = $data['senha'];
@@ -42,7 +39,7 @@ try {
     $stmt->execute();
 
     // Retornar uma resposta ao aplicativo
-    $response = array('success' => true, 'message' => ''.$tempo.', Produto cadastrado');
+    $response = array('success' => true, 'message' => ''.$tempo.', Usuário cadastrado!');
     echo json_encode($response);
 } catch (PDOException $e) {
     // Em caso de erro, retornar uma mensagem de erro
