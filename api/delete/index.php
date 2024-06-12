@@ -23,7 +23,6 @@ try {
     $a = $data['a'];    
 	$tempo = date("Y-m-d H:i:s");	
 	
-	
    
     //$sql = "INSERT INTO avaliacao (titulo,nota,mensagem,tempo) VALUES (:titulo,:nota,:mensagem,:tempo)";
     echo $sql = "UPDATE `orcamento` SET `delecao` = '1', dt_delete=:tempo WHERE (`id` = :a) limit 1";

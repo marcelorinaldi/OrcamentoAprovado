@@ -151,6 +151,17 @@ export default StyleSheet.create({
         //alignItems: 'center',
         //justifyContent: 'center',
     },
+    campo2: {
+        backgroundColor: 'white',
+        borderColor: 'black',
+        borderWidth: 0.5,
+        height: 30,
+        width: 60,
+        textAlign: "center",
+        marginBottom: 10,
+        // alignItems: 'center',
+        // justifyContent: 'left',
+    },
     scroll: {
         backgroundColor: 'white',
         borderColor: 'black',

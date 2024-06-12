@@ -29,16 +29,18 @@ try {
     $despesas = $data['despesas'];
     $obs = $data['obs'];
 	$data = date("Y-m-d H:i:s");
+	$data_val = $data['data_validadex'];
 	
 	
     // Inserir os dados na tabela 'usuario'
-    $sql = "INSERT INTO orcamento (nome,receitas,despesas,obs,delecao,data) VALUES (:nome,:receitas,:despesas,:obs,0,:data)";
+    $sql = "INSERT INTO orcamento (nome,receitas,despesas,obs,delecao,data,data_val) VALUES (:nome,:receitas,:despesas,:obs,0,:data,:data_val)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':receitas', $receitas);
     $stmt->bindParam(':despesas', $despesas);
     $stmt->bindParam(':obs', $obs);
     $stmt->bindParam(':data', $data);
+    $stmt->bindParam(':data_val', $data_val);
     $stmt->execute();
 
     // Retornar uma resposta ao aplicativo
