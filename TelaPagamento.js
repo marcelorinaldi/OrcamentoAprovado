@@ -4,7 +4,7 @@ import css from './estilo/estilo';
 import axios from 'axios';
 
 
-function TelaDelete({ navigation }) {
+function TelaPagamento({ navigation }) {
   const [users, setUsers] = useState([]);
   let token = 'Q!W@ee344%%R';
   useEffect(() => {
@@ -20,7 +20,7 @@ function TelaDelete({ navigation }) {
     if (a !== '') {
 
       //axios.post('https://api.semlimite.app.br/delete/', { token, a })
-        axios.post('http://192.168.56.2/api/delete/',{token,a})
+        axios.post('http://192.168.56.2/api/pagamento/',{token,a})
         .then(response => {
           const data = response.data;
         })
@@ -34,10 +34,10 @@ function TelaDelete({ navigation }) {
   }
 
 
-  const apagar = (a, b) => {
+  const pagar = (a, b) => {
     Alert.alert(
       'Atenção!',
-      'Apagar o orçamento? \n Id:' + a + '\n' + b + '',
+      'Informar o pagamento? \n Id:' + a + '\n' + b + '',
       [
         {
           text: 'Sim',
@@ -58,15 +58,15 @@ function TelaDelete({ navigation }) {
       <Text> </Text>
       <Text> </Text>
       <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-        <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+        <Image source={require('./assets/logo2.png')} style={css.logox}></Image>
       </TouchableOpacity>
       <Text></Text>
-      <Text>Apagar Orçamento</Text>
+      <Text>Informar Pagamento</Text>
       <FlatList
         data={users}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => apagar(item.id, item.nome)}>
+          <TouchableOpacity onPress={() => pagar(item.id, item.nome)}>
             <View >
               <View style={css.viewnumero2}>
                 <View style={css.principal2}>
@@ -101,4 +101,4 @@ function TelaDelete({ navigation }) {
     </View>
   );
 }
-export default TelaDelete;
+export default TelaPagamento;

@@ -43,44 +43,45 @@ function TelaInsert({ navigation }) {
     setObs('');
   }
   return (
-    <View style={css.container}>
-      <Text> </Text>
-      <Text> </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-        <Image source={require('./assets/logo2.png')} style={css.logox}></Image>
-      </TouchableOpacity>
-
-      <Text>Novo Orçamento</Text>
-      <SafeAreaView style={css.container}>
-        <View>
-          <Text>Nome</Text>
-          <TextInput placeholder="" style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
-          <Text>Receitas R$</Text>
-          <TextInput placeholder="" style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas}></TextInput>
-          <Text>Despesas R$</Text>
-          <Text></Text><TextInput placeholder="" style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas}></TextInput>
-          <Text>Observações</Text>
-          <ScrollView style={css.scrollView}>
-            <TextInput style={css.scroll} onChangeText={(text) => setObs(text)} value={obs}></TextInput>
-          </ScrollView>
-
-          <View style={css.principal}>
-          <Text>Data de validade:</Text>
-          <TextInput placeholder="Dia" style={css.campo2} onChangeText={(text) => setData_validade(text)} value={data_validade}></TextInput>
-          <Text>/</Text>
-          <TextInput placeholder="Mês" style={css.campo2} onChangeText={(text) => setData_validade2(text)} value={data_validade2}></TextInput>
-          <Text>/</Text>
-          <TextInput placeholder="Ano" style={css.campo2} onChangeText={(text) => setData_validade3(text)} value={data_validade3}></TextInput>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={css.container}>
+          <Text> </Text>
+          <Text> </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
+            <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+          </TouchableOpacity>
+          <Text>Novo Orçamento</Text>
+          <SafeAreaView style={css.container}>
+            <View>
+              <Text>Nome</Text>
+              <TextInput placeholder="" style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
+              <Text>Receitas R$</Text>
+              <TextInput placeholder="" style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas}></TextInput>
+              <Text>Despesas R$</Text>
+              <Text></Text><TextInput placeholder="" style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas}></TextInput>
+              <Text>Observações</Text>
+              <ScrollView style={css.scrollView}>
+                <TextInput style={css.scroll} onChangeText={(text) => setObs(text)} value={obs}></TextInput>
+              </ScrollView>
+              <View style={css.principal}>
+              <Text>Data de validade:</Text>
+              <TextInput placeholder="Dia" style={css.campo2} onChangeText={(text) => setData_validade(text)} value={data_validade}></TextInput>
+              <Text>/</Text>
+              <TextInput placeholder="Mês" style={css.campo2} onChangeText={(text) => setData_validade2(text)} value={data_validade2}></TextInput>
+              <Text>/</Text>
+              <TextInput placeholder="Ano" style={css.campo2} onChangeText={(text) => setData_validade3(text)} value={data_validade3}></TextInput>
+            </View>
+              <View style={css.viewbotoes}>
+                <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
+                <View><Button title="Adicionar Produto" color='#154360' onPress={cadastrar} /></View>
+              </View>
+            </View>
+          </SafeAreaView>
+          <Text> </Text>
         </View>
-
-          <View style={css.viewbotoes}>
-            <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
-            <View><Button title="Adicionar Produto" color='#154360' onPress={cadastrar} /></View>
-          </View>
-        </View>
-      </SafeAreaView>
-      <Text> </Text>
-    </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 export default TelaInsert;

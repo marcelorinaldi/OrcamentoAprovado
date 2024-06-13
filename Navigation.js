@@ -11,6 +11,9 @@ import TelaRetorno2 from "./TelaRetorno2";
 import TelaCadastro from "./TelaCadastro";
 import TelaLogin from "./TelaLogin";
 import TelaBusca from "./TelaBusca";
+import TelaPagamento from "./TelaPagamento";
+import TelaApagar from "./TelaApagar";
+import TelaPagas from "./TelaPagas";
 
 
 const Stack = createStackNavigator();
@@ -29,6 +32,9 @@ function Navigation() {
                 <Stack.Screen name="TelaCadastro" component={TelaCadastro} />                
                 <Stack.Screen name="TelaBusca" component={TelaBusca} />                
                 <Stack.Screen name="TelaLogin" component={TelaLogin} />                
+                <Stack.Screen name="TelaPagamento" component={TelaPagamento} />                
+                <Stack.Screen name="TelaApagar" component={TelaApagar} />                
+                <Stack.Screen name="TelaPagas" component={TelaPagas} />                
             </Stack.Navigator>
         </NavigationContainer >
     );

@@ -55,6 +55,7 @@ function TelaEditar2({ navigation, route }) {
 
   }
 
+
   limpar = () => {
     setNome('');
     setReceitas('');
@@ -126,7 +127,7 @@ function TelaEditar2({ navigation, route }) {
           </View> */}
           <View style={css.viewletra2}>
             <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
-            <Text> </Text>
+            <Text></Text>
             <View><Button title="Atualizar Produto" color='#154360' onPress={cadastrar} /></View>
                       </View>
 

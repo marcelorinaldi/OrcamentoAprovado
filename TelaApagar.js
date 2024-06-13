@@ -7,7 +7,7 @@ function TelaSelect({ navigation }) {
 
   // carrega dados da api 
   useEffect(() => {
-    fetch('http://192.168.56.2/api/select/')
+    fetch('http://192.168.56.2/api/select_apagar/')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => alert('Sem Registro'));

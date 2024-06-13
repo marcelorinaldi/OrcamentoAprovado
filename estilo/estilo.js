@@ -9,8 +9,8 @@ export default StyleSheet.create({
     },
     logo: {
         marginBottom: 20,
-         width:300,
-        height:300
+         width:200,
+        height:200
     },
     logox: {
         marginBottom: 20,
@@ -18,6 +18,17 @@ export default StyleSheet.create({
         height:70
     },
     principal: {
+        //backgroundColor: 'yellow',        
+        width: '95%',
+        display: 'flex',
+        flexDirection: 'row',
+        marginBottom: 10,
+        bottom: 0,
+        gap: 7,
+        alignItems: 'left',
+        justifyContent: 'left',
+    },
+    principalinicial: {
         //backgroundColor: 'yellow',        
         width: '95%',
         display: 'flex',
