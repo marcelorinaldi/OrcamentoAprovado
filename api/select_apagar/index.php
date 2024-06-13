@@ -3,7 +3,7 @@
 	 // Conectar ao banco de dados		
 //require '../bancocasa.php';
 require '../bancosenac.php';
-//require '../../../bancoservidor.php';
+
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
@@ -12,11 +12,8 @@ if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-$login = $_GET['login'];
-
-
 // Consulta SQL para selecionar todos os dados da tabela usuario
-$sql = "SELECT * FROM `orcamento` where  nome like '%".$login."%'";
+$sql = "SELECT * FROM orcamento_aprovado.orcamento where status=0 order by id desc";
 $result = $conn->query($sql);
 //print_r($result);
 // Verifica se há resultados para a consulta
@@ -49,7 +46,7 @@ if ($result->num_rows > 0) {
 	
 } else {
     // Se não houver resultados, retorna uma mensagem de erro
-    echo "1";
+    echo "Nenhum usuário encontrado.";
 }
 
 // Fecha a conexão com o banco de dados
