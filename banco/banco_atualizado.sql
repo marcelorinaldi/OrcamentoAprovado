@@ -32,10 +32,13 @@ CREATE TABLE `orcamento` (
   `obs` varchar(100) DEFAULT NULL,
   `delecao` varchar(45) DEFAULT NULL,
   `data` datetime DEFAULT NULL,
+  `data_val` datetime DEFAULT NULL,
   `dt_delete` datetime DEFAULT NULL,
   `dt_edicao` datetime DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `dt_pagamento` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +47,7 @@ CREATE TABLE `orcamento` (
 
 LOCK TABLES `orcamento` WRITE;
 /*!40000 ALTER TABLE `orcamento` DISABLE KEYS */;
-INSERT INTO `orcamento` VALUES (1,'ORÇAMENTO EDITA','1000EDITA','2000EDITA','OBSEDITA','0','2024-06-10 10:11:32','2024-06-10 11:10:04',NULL),(2,'NOME_TESTE2','RECEITAS_TESTE2','DESPESAS_TESTE2','OBS_TESTE2','0','2024-06-10 10:15:52','2024-06-10 11:12:23',NULL);
+INSERT INTO `orcamento` VALUES (1,'ORÇAMENTO1306','RECEITAfcbcvb1306','DESPESAfgbcvfb1306','OBSERVAÇÕEjgnvb1306','0','2024-06-10 10:11:32',NULL,'2024-06-13 09:00:57','2024-06-13 09:00:30','1',NULL),(2,'ORÇAMENTO','RECEITAS','DESPESAS','OBSERVAÇÕES','0','2024-06-10 10:15:52',NULL,'2024-06-12 08:36:21','2024-06-11 10:16:16','1',NULL),(3,'orcamentofinal','receitafinal','despesafinal','obsevaçõesfinais','0','2024-06-11 11:09:57',NULL,NULL,NULL,'1',NULL),(4,'tesdte1206','tesdte1206','tesdte1206','tesdte1206','0','2024-06-12 08:35:45',NULL,NULL,NULL,'1',NULL),(5,'zero','zerop','zero','zero','0','2024-06-12 09:31:35',NULL,NULL,NULL,'0','2024-06-13 10:15:01'),(6,'validade','validade','validade','validade','0','2024-06-12 09:52:38','2024-06-12 09:52:38',NULL,NULL,'0',NULL),(7,'nao deu','nao deu','nao deu','naop deu','0','2024-06-12 09:53:50','2024-06-12 09:53:50',NULL,'2024-06-13 10:43:33','0',NULL),(8,'teste1306','receitas1306','despesas1306','observações1306','0','2024-06-13 09:44:19','2024-06-15 00:00:00',NULL,NULL,'1','2024-06-13 11:22:58'),(9,'pagar1306','pagar1306','pagar1306','pagar1306','0','2024-06-13 10:17:37','2024-06-15 00:00:00',NULL,NULL,'1','2024-06-13 11:17:45'),(10,'pagarrrrrrrr','pagarrrrr','pagarrrrrr','pagarrrrrr','1','2024-06-13 10:19:14','2024-06-15 00:00:00','2024-06-17 11:22:00',NULL,'1','2024-06-17 08:51:23'),(11,'NOME1120','RECEITAS1120','DESPESAS1120','OBSERVAÇÕES1120','0','2024-06-17 11:20:27','2024-06-20 00:00:00',NULL,NULL,'0',NULL);
 /*!40000 ALTER TABLE `orcamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +66,7 @@ CREATE TABLE `usuario` (
   `data` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login_UNIQUE` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +75,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'admin','admin','123','2024-06-07 10:17:00'),(2,'NOME_TESTE','LOGIN_TESTE','SENHA_TESTE','2024-06-10 10:20:29'),(3,'NOME_TESTE2','LOGIN_TESTE2','SENHA_TESTE2','2024-06-10 10:23:50');
+INSERT INTO `usuario` VALUES (1,'admin','admin','123','2024-06-07 10:17:00'),(2,'NOME_TESTE','LOGIN_TESTE','SENHA_TESTE','2024-06-10 10:20:29'),(3,'NOME_TESTE2','LOGIN_TESTE2','SENHA_TESTE2','2024-06-10 10:23:50'),(4,'TESTE1206','LOGIN1206','SENHA1206','2024-06-12 08:30:15');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -85,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-10 11:15:30
+-- Dump completed on 2024-06-17 11:24:57
