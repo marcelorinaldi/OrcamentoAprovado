@@ -53,7 +53,7 @@ function TelaSelect({ navigation }) {
                   </View>
                 </View> */}
                 <View style={css.viewletra}>
-                  <Text style={css.letra3}>{item.nome}</Text>
+                  <Text style={css.letra}>{item.nome}</Text>
                   <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>
                   <Text style={css.letra3}>Despesas: R$ {item.despesas}</Text>
                   <Text style={css.letra3}>Observações: {item.obs}</Text>

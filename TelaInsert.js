@@ -51,21 +51,21 @@ function TelaInsert({ navigation }) {
           <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
             <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
           </TouchableOpacity>
-          <Text>Novo Orçamento</Text>
+          <Text style={css.letra}>Novo Orçamento</Text>
           <SafeAreaView style={css.container}>
             <View>
-              <Text>Nome</Text>
+              <Text style={css.letra2}>Nome</Text>
               <TextInput placeholder="" style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
-              <Text>Receitas R$</Text>
+              <Text style={css.letra2}>Receitas R$</Text>
               <TextInput placeholder="" style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas}></TextInput>
-              <Text>Despesas R$</Text>
+              <Text style={css.letra2}>Despesas R$</Text>
               <Text></Text><TextInput placeholder="" style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas}></TextInput>
-              <Text>Observações</Text>
+              <Text style={css.letra2}>Observações</Text>
               <ScrollView style={css.scrollView}>
                 <TextInput style={css.scroll} onChangeText={(text) => setObs(text)} value={obs}></TextInput>
               </ScrollView>
               <View style={css.principal}>
-              <Text>Data de validade:</Text>
+              <Text style={css.letra2}>Data de validade:</Text>
               <TextInput placeholder="Dia" style={css.campo2} onChangeText={(text) => setData_validade(text)} value={data_validade}></TextInput>
               <Text>/</Text>
               <TextInput placeholder="Mês" style={css.campo2} onChangeText={(text) => setData_validade2(text)} value={data_validade2}></TextInput>
@@ -73,8 +73,8 @@ function TelaInsert({ navigation }) {
               <TextInput placeholder="Ano" style={css.campo2} onChangeText={(text) => setData_validade3(text)} value={data_validade3}></TextInput>
             </View>
               <View style={css.viewbotoes}>
-                <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
-                <View><Button title="Adicionar Produto" color='#154360' onPress={cadastrar} /></View>
+                <View><Button title="Limpar" color='green' onPress={limpar} /></View>
+                <View><Button title="Adicionar Produto" color='green' onPress={cadastrar} /></View>
               </View>
             </View>
           </SafeAreaView>

@@ -50,19 +50,19 @@ return (
       <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
     </TouchableOpacity>
 
-    <Text>Novo Usuário</Text>
+    <Text style={css.letra}>Novo Usuário</Text>
     <View>
-      <Text>Nome</Text>
+      <Text style={css.letra2}>Nome</Text>
       <TextInput placeholder="" style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
-      <Text>Login</Text>
+      <Text style={css.letra2}>Login</Text>
       <TextInput placeholder="" style={css.campo} onChangeText={(text) => setLogin(text)} value={login}></TextInput>
-      <Text>Senha</Text>
+      <Text style={css.letra2}>Senha</Text>
       <TextInput placeholder="" style={css.campo} onChangeText={(text) => setSenha(text)} value={senha}></TextInput>
-      <Text>Confirmar Senha</Text>
+      <Text style={css.letra2}>Confirmar Senha</Text>
       <TextInput placeholder="" style={css.campo} onChangeText={(text) => setSenha2(text)} value={senha2}></TextInput>
       <View style={css.viewbotoes}>
-        <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
-        <View><Button title="Cadastrar" color='#154360' onPress={cadastrar} /></View>
+        <View><Button title="Limpar" color="green" onPress={limpar} /></View>
+        <View><Button title="Cadastrar" color="green" onPress={cadastrar} /></View>
       </View>
     </View>
     <Text> </Text>

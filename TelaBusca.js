@@ -1,103 +1,72 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Button, TextInput, Alert, TouchableOpacity, Image,FlatList } from 'react-native';
+import { Text, View, Button, TextInput, Alert, TouchableOpacity, Image, FlatList } from 'react-native';
 import css from './estilo/estilo';
 import axios from 'axios';
-
 function TelaBusca({ navigation }) {
   const [loginx, setLoginx] = useState('');
- 
   const [users, setUsers] = useState([]);
-
-
   const [id, setId] = useState('');
   const [nome, setNome] = useState('');
-
-
-
   useEffect(() => {
     setLoginx('');
-   
   }, []);
-
-
   let token = 'Q!W@ee344%%R';
-
   const autenticar = () => {
-    //axios.get(`https://api.semlimite.app.br/select_login/?token=${token}&login=${loginx}&senha=${senhax}`)
     axios.get(`http://192.168.56.2/api/select_busca/?token=${token}&login=${loginx}`)
       .then(response => {
         setUsers(response.data);
         console.log(users);
         if (users && users.length > 0) {
-          const primeiroItem = users[0]; // Vamos extrair dados apenas do primeiro item por enquanto
+          const primeiroItem = users[0];
           const { id, nome } = primeiroItem;
           setNome(nome);
           setId(id);
           console.log('ok' + id + '|' + nome);
-          // navigation.navigate('TelaInicial', { id, nome });
         }
-        // if (users == 1) {
-        //   alert('Tudo Errado Fio =)');
-        // }
       })
       .catch(error => {
         console.error(error);
       });
   }
-
   logar = () => {
     if (loginx.trim() !== '') {
       autenticar();
     } else {
       alert('Preencher Campos!!!');
     }
-
   }
-
   limpar = () => {
     setLoginx('');
-   
   }
 
-
-
-  // carrega dados da api 
   useEffect(() => {
     fetch('http://192.168.56.2/api/select/')
-   // fetch('https://api.semlimite.app.br/select/')
+
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => alert('Sem Registro'));
   }, []);
-
-
   const aviso = (a, b, c, d, e) => {
     navigation.navigate('TelaUpdate', { id: a, nome: b });
   }
-
-  //console.log(login);
-  // console.log(senha);
   return (
     <View style={css.container}>
       <Text> </Text>
       <Text> </Text>
       <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-      <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+        <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
       </TouchableOpacity>
-      <Text>Busca</Text>
+      <Text style={css.text}>Busca</Text>
       <View>
-              <TextInput placeholder="" style={css.campo} onChangeText={(text) => setLoginx(text)} value={loginx}></TextInput>
+        <TextInput placeholder="" style={css.campo} onChangeText={(text) => setLoginx(text)} value={loginx}></TextInput>
         <View style={css.viewbotoes}>
-          <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
-          <View><Button title="Buscar" color='#154360' onPress={logar} /></View>
+          <View><Button title="Limpar" color='green' onPress={limpar} /></View>
+          <View><Button title="Buscar" color='green' onPress={logar} /></View>
         </View>
       </View>
       <Text> </Text>
-
-
-
       <Text></Text>
-      <Text>Quantidade de Registros: {users.length}</Text>
+      <Text style={css.text}>Quantidade de Registros: {users.length}</Text>
       <FlatList
         data={users}
         keyExtractor={item => item.id.toString()}
@@ -110,7 +79,7 @@ function TelaBusca({ navigation }) {
                 </View>
               </View>
               <View style={css.principal}>
-                <View style={css.viewnumero3}>
+                {/* <View style={css.viewnumero3}>
                   <View>
                     {
                       item.imagem == "" ? (
@@ -120,7 +89,7 @@ function TelaBusca({ navigation }) {
                       )
                     }
                   </View>
-                </View>
+                </View> */}
                 <View style={css.viewletra}>
                   <Text style={css.letra3}>{item.nome}</Text>
                   <Text style={css.letra3}>Quantidade: {item.quantidade}</Text>
@@ -132,10 +101,7 @@ function TelaBusca({ navigation }) {
           </TouchableOpacity>
         )} />
       <Text> </Text>
-
-
     </View>
   );
 }
 export default TelaBusca;
-

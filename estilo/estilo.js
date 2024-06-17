@@ -9,13 +9,13 @@ export default StyleSheet.create({
     },
     logo: {
         marginBottom: 20,
-         width:200,
-        height:200
+        width: 200,
+        height: 200
     },
     logox: {
         marginBottom: 20,
-         width:300,
-        height:70
+        width: 300,
+        height: 70
     },
     principal: {
         //backgroundColor: 'yellow',        
@@ -63,7 +63,7 @@ export default StyleSheet.create({
         borderWidth: 1
     },
     viewnumero2: {
-        backgroundColor: '#3498DB',
+        backgroundColor: 'white',
         width: '95%',
         height: 35,
         marginBottom: 10,
@@ -88,17 +88,17 @@ export default StyleSheet.create({
     },
     viewletra: {
         backgroundColor: 'white',
-        width: '60%',
+        width: '80%',
         marginBottom: 10,
         bottom: 0,
         alignItems: 'left',
         justifyContent: 'center',
         height: 100,
         borderRadius: 10,
-        borderColor: '#3498DB',
+        borderColor: 'lightgreen',
         borderWidth: 1,
     },
-     viewletra1: {
+    viewletra1: {
         backgroundColor: 'white',
         width: '60%',
         marginBottom: 10,
@@ -118,7 +118,7 @@ export default StyleSheet.create({
         alignItems: 'left',
         justifyContent: 'center',
         height: 100,
-        
+
     },
     numero: {
         color: 'red',
@@ -126,13 +126,13 @@ export default StyleSheet.create({
         fontSize: 30
     },
     letra: {
-        color: 'red',
+        color: 'green',
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: 18,
         marginLeft: 15
     },
     letra2: {
-        color: 'black',
+        color: 'grey',
         fontWeight: 'bold',
         fontSize: 15,
         marginLeft: 15
@@ -185,17 +185,31 @@ export default StyleSheet.create({
         //justifyContent: 'center',
     },
     viewbotoes: {
-        //backgroundColor: 'yellow',        
+        color: 'green',
         width: '95%',
         display: 'flex',
         flexDirection: 'row',
-        //marginBottom: 10,
-        //bottom: 0,
         gap: 7,
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'white',
     },
+
+    drawerContent: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+      },
+      drawerItem: {
+        marginVertical: 10,
+        padding: 10,
+        backgroundColor: 'lightgrey',
+        borderRadius: 5,
+      },
+      drawerText: {
+        fontSize: 18,
+        color: 'black',
+      },
 
     text: {
         color: 'green',

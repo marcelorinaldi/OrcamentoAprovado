@@ -58,10 +58,10 @@ function TelaPagamento({ navigation }) {
       <Text> </Text>
       <Text> </Text>
       <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-        <Image source={require('./assets/logo2.png')} style={css.logox}></Image>
+      <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
       </TouchableOpacity>
       <Text></Text>
-      <Text>Informar Pagamento</Text>
+      <Text style={css.text}>Informar Pagamento</Text>
       <FlatList
         data={users}
         keyExtractor={item => item.id.toString()}

@@ -68,9 +68,9 @@ function TelaLogin({ navigation }) {
         <Text>Senha</Text>
         <TextInput placeholder="" style={css.campo} onChangeText={(text) => setSenhax(text)} value={senhax} secureTextEntry={true} />
         <View style={css.viewbotoes}>
-          <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
-          <View><Button title="Login" color='#154360' onPress={logar} /></View>
-          <View><Button title='Cadastro' color='#154360' onPress={() => navigation.navigate('TelaCadastro')} /></View>
+          <View><Button title="Limpar" color="green" onPress={limpar} /></View>
+          <View><Button title="Login"color="green" onPress={logar} /></View>
+          <View><Button title='Cadastro' color="green" onPress={() => navigation.navigate('TelaCadastro')} /></View>
         </View>
       </View>
       <Text> </Text>
