@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, FlatList, TouchableOpacity, View, Button, TextInput, Alert, Image } from 'react-native';
 import css from './estilo/estilo';
 import axios from 'axios';
+import Menu from './Menu';
 
 
 function TelaDelete({ navigation }) {
@@ -61,7 +62,7 @@ function TelaDelete({ navigation }) {
         <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
       </TouchableOpacity>
       <Text></Text>
-      <Text>Apagar Orçamento</Text>
+      <Text style={css.letra}>Apagar Orçamento</Text>
       <FlatList
         data={users}
         keyExtractor={item => item.id.toString()}
@@ -70,24 +71,23 @@ function TelaDelete({ navigation }) {
             <View >
               <View style={css.viewnumero2}>
                 <View style={css.principal2}>
-                <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
                 </View>
               </View>
 
               <View style={css.principal}>
                 {/* <View style={css.viewnumero3}>
                   <View>
-                    {
-                      item.imagem == "" ? (
-                        <Image source={require('./assets/sem.png')} style={css.icone} />
+                  {
+                    item.imagem == "" ? (
+                      <Image source={require('./assets/sem.png')} style={css.icone} />
                       ) : (
                         <Image source={{ uri: `${item.imagem}` }} style={css.icone} />
-                      )
-                    }
-                  </View>
-                </View> */}
+                        )
+                      }
+                      </View>
+                    </View> */}
                 <View style={css.viewletra}>
-                  <Text style={css.letra3}>Orçamento: {item.nome}</Text>
+                    <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
                   <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>
                   <Text style={css.letra3}>Despesas: R$ {item.despesas}</Text>
                   <Text style={css.letra3}>Observações: {item.obs}</Text>
@@ -98,6 +98,7 @@ function TelaDelete({ navigation }) {
           </TouchableOpacity>
         )} />
       <Text> </Text>
+      <Menu navigation={navigation} />
     </View>
   );
 }

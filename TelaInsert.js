@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, Button, TextInput, Alert, TouchableOpacity, Image, SafeAreaView, ScrollView } from 'react-native';
 import css from './estilo/estilo';
 import axios from 'axios';
+import Menu from './Menu';
 
 function TelaInsert({ navigation }) {
   const [nome, setNome] = useState('');
@@ -65,13 +66,13 @@ function TelaInsert({ navigation }) {
                 <TextInput style={css.scroll} onChangeText={(text) => setObs(text)} value={obs}></TextInput>
               </ScrollView>
               <View style={css.principal}>
-              <Text style={css.letra2}>Data de validade:</Text>
-              <TextInput placeholder="Dia" style={css.campo2} onChangeText={(text) => setData_validade(text)} value={data_validade}></TextInput>
-              <Text>/</Text>
-              <TextInput placeholder="Mês" style={css.campo2} onChangeText={(text) => setData_validade2(text)} value={data_validade2}></TextInput>
-              <Text>/</Text>
-              <TextInput placeholder="Ano" style={css.campo2} onChangeText={(text) => setData_validade3(text)} value={data_validade3}></TextInput>
-            </View>
+                <Text style={css.letra2}>Data de validade:</Text>
+                <TextInput placeholder="Dia" style={css.campo2} onChangeText={(text) => setData_validade(text)} value={data_validade}></TextInput>
+                <Text>/</Text>
+                <TextInput placeholder="Mês" style={css.campo2} onChangeText={(text) => setData_validade2(text)} value={data_validade2}></TextInput>
+                <Text>/</Text>
+                <TextInput placeholder="Ano" style={css.campo2} onChangeText={(text) => setData_validade3(text)} value={data_validade3}></TextInput>
+              </View>
               <View style={css.viewbotoes}>
                 <View><Button title="Limpar" color='green' onPress={limpar} /></View>
                 <View><Button title="Adicionar Produto" color='green' onPress={cadastrar} /></View>
@@ -79,6 +80,7 @@ function TelaInsert({ navigation }) {
             </View>
           </SafeAreaView>
           <Text> </Text>
+          <Menu navigation={navigation} />
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, Button, TextInput, Alert, TouchableOpacity, Image } from 'react-native';
 import css from './estilo/estilo';
 import axios from 'axios';
+import Menu from './Menu';
 
 function TelaInsert({ navigation }) {
   const [nome, setNome] = useState('');
@@ -66,6 +67,7 @@ return (
       </View>
     </View>
     <Text> </Text>
+    <Menu navigation={navigation} />
   </View>
 );
   }

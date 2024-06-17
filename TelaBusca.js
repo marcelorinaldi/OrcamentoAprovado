@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, Button, TextInput, Alert, TouchableOpacity, Image, FlatList } from 'react-native';
 import css from './estilo/estilo';
 import axios from 'axios';
+import Menu from './Menu';
+
 function TelaBusca({ navigation }) {
   const [loginx, setLoginx] = useState('');
   const [users, setUsers] = useState([]);
@@ -75,32 +77,22 @@ function TelaBusca({ navigation }) {
             <View >
               <View style={css.viewnumero2}>
                 <View style={css.principal2}>
-                  <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
                 </View>
               </View>
               <View style={css.principal}>
-                {/* <View style={css.viewnumero3}>
-                  <View>
-                    {
-                      item.imagem == "" ? (
-                        <Image source={require('./assets/sem.png')} style={css.icone} />
-                      ) : (
-                        <Image source={{ uri: `${item.imagem}` }} style={css.icone} />
-                      )
-                    }
-                  </View>
-                </View> */}
                 <View style={css.viewletra}>
-                  <Text style={css.letra3}>{item.nome}</Text>
-                  <Text style={css.letra3}>Quantidade: {item.quantidade}</Text>
-                  <Text style={css.letra3}>Valor: R$ {item.valor}</Text>
-                  <Text style={css.letra3}>{item.tempo}</Text>
+                  <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
+                  <Text style={css.letra2}>Receitas: R$ {item.receitas}</Text>
+                  <Text style={css.letra2}>Despesas: R$ {item.despesas}</Text>
+                  <Text style={css.letra2}>Observações: {item.obs}</Text>
+                  <Text style={css.letra2}>{item.tempo}</Text>
                 </View>
               </View>
             </View>
           </TouchableOpacity>
         )} />
       <Text> </Text>
+      <Menu navigation={navigation} />
     </View>
   );
 }

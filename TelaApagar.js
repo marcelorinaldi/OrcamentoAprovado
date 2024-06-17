@@ -65,6 +65,7 @@ function TelaSelect({ navigation }) {
       />
       <Text> </Text>
     </View>
+    
   );
 }
 

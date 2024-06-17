@@ -214,5 +214,29 @@ export default StyleSheet.create({
     text: {
         color: 'green',
         fontWeight: 'bold',
-    }
+        fontSize: 18,
+    },
+
+    logo: {
+        width: 100,
+        height: 100,
+      },
+      principalinicial: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        margin: 10,
+      },
+      footerMenu: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        backgroundColor: '#eee',
+        padding: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+      },
+      footerMenuItem: {
+        width: 30, // Defina o tamanho das imagens conforme necessário
+        height: 30,
+      },
 });

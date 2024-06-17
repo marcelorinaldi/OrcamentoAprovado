@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, FlatList, TouchableOpacity, View, Image } from 'react-native';
 import css from './estilo/estilo';
+import Menu from './Menu';
 
 function TelaSelect({ navigation }) {
   const [users, setUsers] = useState([]);
@@ -35,8 +36,7 @@ function TelaSelect({ navigation }) {
             <View>
               <View style={css.viewnumero2}>
                 <View style={css.principal2}>
-                  <Text style={css.letra2}>
-                    {item.id} - {item.nome ? item.nome.substring(0, 32) : ''}
+                  <Text style={css.letra2}>{item.id} - {item.nome ? item.nome.substring(0, 32) : ''}
                   </Text>
                 </View>
               </View>
@@ -64,6 +64,7 @@ function TelaSelect({ navigation }) {
         )}
       />
       <Text> </Text>
+      <Menu navigation={navigation} />
     </View>
   );
 }

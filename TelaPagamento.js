@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, FlatList, TouchableOpacity, View, Button, TextInput, Alert, Image } from 'react-native';
 import css from './estilo/estilo';
 import axios from 'axios';
+import Menu from './Menu';
 
 
 function TelaPagamento({ navigation }) {
@@ -34,7 +35,7 @@ function TelaPagamento({ navigation }) {
   }
 
 
-  const pagar = (a, b) => {
+  const pagar = (a, b, c, d,) => {
     Alert.alert(
       'Atenção!',
       'Informar o pagamento? \n Id:' + a + '\n' + b + '',
@@ -66,27 +67,27 @@ function TelaPagamento({ navigation }) {
         data={users}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => pagar(item.id, item.nome)}>
+          <TouchableOpacity onPress={() => pagar(item.id, item.nome, item.receitas, item.despesas, item.obs)}>
             <View >
               <View style={css.viewnumero2}>
                 <View style={css.principal2}>
-                <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
                 </View>
               </View>
 
               <View style={css.principal}>
                 {/* <View style={css.viewnumero3}>
                   <View>
-                    {
-                      item.imagem == "" ? (
-                        <Image source={require('./assets/sem.png')} style={css.icone} />
+                  {
+                    item.imagem == "" ? (
+                      <Image source={require('./assets/sem.png')} style={css.icone} />
                       ) : (
                         <Image source={{ uri: `${item.imagem}` }} style={css.icone} />
-                      )
-                    }
-                  </View>
-                </View> */}
+                        )
+                      }
+                      </View>
+                    </View> */}
                 <View style={css.viewletra}>
+                    <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
                   <Text style={css.letra3}>Orçamento: {item.nome}</Text>
                   <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>
                   <Text style={css.letra3}>Despesas: R$ {item.despesas}</Text>
@@ -97,7 +98,7 @@ function TelaPagamento({ navigation }) {
             </View>
           </TouchableOpacity>
         )} />
-      <Text> </Text>
+      <Menu navigation={navigation} />
     </View>
   );
 }

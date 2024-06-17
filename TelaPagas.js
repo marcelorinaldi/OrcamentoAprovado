@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, FlatList, TouchableOpacity, View, Image } from 'react-native';
 import css from './estilo/estilo';
+import Menu from './Menu';
 
 function TelaSelect({ navigation }) {
   const [users, setUsers] = useState([]);
@@ -26,7 +27,7 @@ function TelaSelect({ navigation }) {
         <Image source={require('./assets/orcamento.png')} style={css.logo} />
       </TouchableOpacity>
       <Text></Text>
-      <Text style={css.text}>Orçamentos cadastrados: {users.length}</Text>
+      <Text style={css.text}>Despesas Pagas: {users.length}</Text>
       <FlatList
         data={users}
         keyExtractor={item => item.id.toString()}
@@ -35,25 +36,22 @@ function TelaSelect({ navigation }) {
             <View>
               <View style={css.viewnumero2}>
                 <View style={css.principal2}>
-                  <Text style={css.letra2}>
-                    {item.id} - {item.nome ? item.nome.substring(0, 32) : ''}
-                  </Text>
                 </View>
               </View>
               <View style={css.principal}>
                 {/* <View style={css.viewnumero3}>
                   <View>
-                    {
-                      item.imagem == "" ? (
-                        <Image source={require('./assets/sem.png')} style={css.icone} />
+                  {
+                    item.imagem == "" ? (
+                      <Image source={require('./assets/sem.png')} style={css.icone} />
                       ) : (
                         <Image source={{ uri: item.imagem }} style={css.icone} />
-                      )
-                    }
-                  </View>
-                </View> */}
+                        )
+                      }
+                      </View>
+                    </View> */}
                 <View style={css.viewletra}>
-                  <Text style={css.letra3}>{item.nome}</Text>
+                  <Text style={css.letra2}>{item.id} - {item.nome ? item.nome.substring(0, 32) : ''}</Text>
                   <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>
                   <Text style={css.letra3}>Despesas: R$ {item.despesas}</Text>
                   <Text style={css.letra3}>Observações: {item.obs}</Text>
@@ -63,7 +61,7 @@ function TelaSelect({ navigation }) {
           </TouchableOpacity>
         )}
       />
-      <Text> </Text>
+      <Menu navigation={navigation} />
     </View>
   );
 }

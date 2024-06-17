@@ -61,7 +61,7 @@ function TelaLogin({ navigation }) {
 
       <Image source={require('./assets/orcamento.png')} style={css.logo} />
 
-      <Text>Bem vindo! Faça login ou cadastre-se!</Text>
+      <Text style={css.text}>Bem vindo! Faça login ou cadastre-se!</Text>
       <View>
         <Text>Login</Text>
         <TextInput placeholder="" style={css.campo} onChangeText={(text) => setLoginx(text)} value={loginx} />

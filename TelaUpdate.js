@@ -98,19 +98,19 @@ function TelaEditar2({ navigation, route }) {
       <Text> </Text>
       <Text> </Text>
       <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-        <Image source={require('./assets/logo2.png')} style={css.logox}></Image>
+      <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
       </TouchableOpacity>
 
       <Text></Text>
-      <Text>Atualizar Cadastro</Text>
+      <Text style={css.text}>Editar Orçamento</Text>
       <View>
-        <Text>Orçamento</Text>
+        <Text style={css.letra2}>Orçamento</Text>
         <TextInput placeholder="Orçamento" style={css.campo} onChangeText={(text) => setNome(text)} value={nome2}></TextInput>
-        <Text>Receitas R$</Text>
+        <Text style={css.letra2}>Receitas R$</Text>
         <TextInput placeholder="0.00" style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas2}></TextInput>
-        <Text>Despesas R$</Text>
+        <Text style={css.letra2}>Despesas R$</Text>
         <TextInput placeholder="0.00" style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas2}></TextInput>
-        <Text>Observações</Text>
+        <Text style={css.letra2}>Observações</Text>
         <TextInput placeholder="Obs:" style={css.campo} onChangeText={(text) => setObs(text)} value={obs2}></TextInput>
         <View style={css.principal}>
           {/* <View style={css.viewnumero3}>
@@ -124,10 +124,10 @@ function TelaEditar2({ navigation, route }) {
               }
             </View>
           </View> */}
-          <View style={css.viewletra2}>
-            <View><Button title="Limpar" color='#154360' onPress={limpar} /></View>
+          <View style={css.viewbotoes}>
+            <View><Button title="Limpar" color='green' onPress={limpar} /></View>
             <Text> </Text>
-            <View><Button title="Atualizar Produto" color='#154360' onPress={cadastrar} /></View>
+            <View><Button title="Atualizar Produto" color='green' onPress={cadastrar} /></View>
                       </View>
 
         </View>
