@@ -13,9 +13,8 @@ function TelaInicial({ navigation, route }) {
   return (
     <View style={css.container}>
       <Text style={css.text}>Administrador: {nome}</Text>
-      <Text> </Text>
-      <Text> </Text>
       <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+
       <Menu navigation={navigation} />
     </View>
   );

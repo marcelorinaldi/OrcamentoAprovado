@@ -227,7 +227,7 @@ export default StyleSheet.create({
         margin: 10,
       },
       footerMenu: {
-        position: 'absolute',
+        position: 'flex',
         bottom: 0,
         width: '100%',
         backgroundColor: '#eee',

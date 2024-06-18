@@ -10,9 +10,6 @@ function TelaInsert({ navigation }) {
   const [senha, setSenha] = useState('');
   const [senha2, setSenha2] = useState('');
 
-
-  
-
   cadastrar = () => {
     let token = 'Q!W@ee344%%R';
     if (senha2.trim() == senha.trim()) {
@@ -66,6 +63,11 @@ return (
         <View><Button title="Cadastrar" color="green" onPress={cadastrar} /></View>
       </View>
     </View>
+    <Text> </Text>
+    <Text> </Text>
+    <Text> </Text>
+    <Text> </Text>
+    <Text> </Text>
     <Text> </Text>
     <Menu navigation={navigation} />
   </View>

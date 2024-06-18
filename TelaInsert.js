@@ -47,8 +47,6 @@ function TelaInsert({ navigation }) {
     <SafeAreaView>
       <ScrollView>
         <View style={css.container}>
-          <Text> </Text>
-          <Text> </Text>
           <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
             <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
           </TouchableOpacity>
