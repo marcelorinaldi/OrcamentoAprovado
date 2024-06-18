@@ -13,11 +13,6 @@ function TelaEditar2({ navigation, route }) {
   const [receitas2, setReceitas] = useState('');
   const [despesas2, setDespesas] = useState('');
   const [obs2, setObs] = useState('');
-  const [data_val2, setData_val] = useState('');
-
-  const [data_validade, setData_validade] = useState('');
-  const [data_validade2, setData_validade2] = useState('');
-  const [data_validade3, setData_validade3] = useState('');
 
   if (route.params && Object.keys(route.params).length > 0) {
     var { id, nome } = route.params;
@@ -32,7 +27,7 @@ function TelaEditar2({ navigation, route }) {
   // carrega os dados 
   const fetchProduct = () => {
     //axios.get(`https://api.semlimite.app.br/select_um/?token=${token}&id=${id}`)
-    axios.get(`http://192.168.56.2/api/select_um/?token=${token}&id=${id}`)
+      axios.get(`http://192.168.56.2/api/select_um/?token=${token}&id=${id}`)    
       .then(response => {
         setUsers2(response.data);
       })
@@ -44,10 +39,8 @@ function TelaEditar2({ navigation, route }) {
   cadastrar = () => {
     let token = 'Q!W@ee344%%R';
     if (nome2.trim() !== '' && receitas2.trim() !== '' && despesas2.trim() !== '') {
-      var data_validadex = "" + data_validade3 + "-" + data_validade2 + "-" + data_validade;
-      console.log("dia:" + data_validadex);
-      // axios.post('https://api.semlimite.app.br/update/', { token, a: id, nome2, valor2, imagem2, quantidade2 })
-      axios.post('http://192.168.56.2/api/update/', { token, a: id, nome2, receitas2, despesas2, data_validadex, obs2 })
+     // axios.post('https://api.semlimite.app.br/update/', { token, a: id, nome2, valor2, imagem2, quantidade2 })
+         axios.post('http://192.168.56.2/api/update/', {token,a:id,nome2,receitas2,despesas2,obs2})    
         .then(response => {
           const data = response.data;
           console.log(data);
@@ -66,7 +59,6 @@ function TelaEditar2({ navigation, route }) {
     setNome('');
     setReceitas('');
     setDespesas('');
-    setData_validade('');
     setObs('');
   }
 
@@ -106,7 +98,7 @@ function TelaEditar2({ navigation, route }) {
       <Text> </Text>
       <Text> </Text>
       <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-        <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+      <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
       </TouchableOpacity>
 
       <Text></Text>
@@ -121,18 +113,25 @@ function TelaEditar2({ navigation, route }) {
         <Text style={css.letra2}>Observações</Text>
         <TextInput placeholder="Obs:" style={css.campo} onChangeText={(text) => setObs(text)} value={obs2}></TextInput>
         <View style={css.principal}>
-          <Text style={css.letra2}>Data de validade:</Text>
-          <TextInput placeholder="Dia" style={css.campo2} onChangeText={(text) => setData_validade(text)} value={data_validade}></TextInput>
-          <Text>/</Text>
-          <TextInput placeholder="Mês" style={css.campo2} onChangeText={(text) => setData_validade2(text)} value={data_validade2}></TextInput>
-          <Text>/</Text>
-          <TextInput placeholder="Ano" style={css.campo2} onChangeText={(text) => setData_validade3(text)} value={data_validade3}></TextInput>
+          {/* <View style={css.viewnumero3}>
+            <View>
+              {
+                imagem2 == "" ? (
+                  <Image source={require('./assets/sem.png')} style={css.icone} />
+                ) : (
+                  <Image source={{ uri: `${imagem2}` }} style={css.icone} />
+                )
+              }
+            </View>
+          </View> */}
+          <View style={css.viewbotoes}>
+            <View><Button title="Limpar" color='green' onPress={limpar} /></View>
+            <Text> </Text>
+            <View><Button title="Atualizar Produto" color='green' onPress={cadastrar} /></View>
+                      </View>
+
         </View>
-        <View style={css.viewbotoes}>
-          <View><Button title="Limpar" color='green' onPress={limpar} /></View>
-          <Text> </Text>
-          <View><Button title="Atualizar Produto" color='green' onPress={cadastrar} /></View>
-        </View>
+
       </View>
       <Text> </Text>
     </View>
