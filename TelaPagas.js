@@ -15,8 +15,8 @@ function TelaSelect({ navigation }) {
   }, []);
 
   // vai direcionar para a tela de edição 
-  const aviso = (a, b, c, d, e) => {
-    navigation.navigate('TelaUpdate', { id: a, nome: b, receitas: c, despesas: d, obs: e });
+  const aviso = (a, b, c, d, e, f) => {
+    navigation.navigate('TelaUpdate', { id: a, nome: b, receitas: c, despesas: d, obs: e, data_val: f });
   };
 
   return (
@@ -32,7 +32,7 @@ function TelaSelect({ navigation }) {
         data={users}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => aviso(item.id, item.nome, item.receitas, item.despesas, item.obs)}>
+          <TouchableOpacity onPress={() => aviso(item.id, item.nome, item.receitas, item.despesas, item.obs, item.data_val)}>
             <View>
               <View style={css.viewnumero2}>
                 <View style={css.principal2}>
@@ -51,10 +51,11 @@ function TelaSelect({ navigation }) {
                       </View>
                     </View> */}
                 <View style={css.viewletra}>
-                  <Text style={css.letra2}>{item.id} - {item.nome ? item.nome.substring(0, 32) : ''}</Text>
-                  <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>
-                  <Text style={css.letra3}>Despesas: R$ {item.despesas}</Text>
-                  <Text style={css.letra3}>Observações: {item.obs}</Text>
+                <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
+                  <Text style={css.letra2}>Receitas: R$ {item.receitas}</Text>
+                  <Text style={css.letra2}>Despesas: R$ {item.despesas}</Text>
+                  <Text style={css.letra2}>Observações: {item.obs}</Text>
+                  <Text style={css.letra2}>Vencimento: {item.data_val}</Text>
                 </View>
               </View>
             </View>
