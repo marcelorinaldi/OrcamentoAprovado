@@ -81,10 +81,11 @@ function TelaBusca({ navigation }) {
               </View>
               <View style={css.principal}>
                 <View style={css.viewletra}>
-                  <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
+                <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
                   <Text style={css.letra2}>Receitas: R$ {item.receitas}</Text>
                   <Text style={css.letra2}>Despesas: R$ {item.despesas}</Text>
                   <Text style={css.letra2}>Observações: {item.obs}</Text>
+                  <Text style={css.letra2}>Vencimento: {item.data_val}</Text>
                   <Text style={css.letra2}>{item.tempo}</Text>
                 </View>
               </View>
