@@ -10,7 +10,7 @@ function TelaPagamento({ navigation }) {
   let token = 'Q!W@ee344%%R';
   useEffect(() => {
     fetch('http://192.168.56.2/api/select/')
-  //fetch('https://api.semlimite.app.br/select/')
+      //fetch('https://api.semlimite.app.br/select/')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => alert('Sem Registro'));
@@ -21,7 +21,7 @@ function TelaPagamento({ navigation }) {
     if (a !== '') {
 
       //axios.post('https://api.semlimite.app.br/delete/', { token, a })
-        axios.post('http://192.168.56.2/api/pagamento/',{token,a})
+      axios.post('http://192.168.56.2/api/pagamento/', { token, a })
         .then(response => {
           const data = response.data;
         })
@@ -59,7 +59,7 @@ function TelaPagamento({ navigation }) {
       <Text> </Text>
       <Text> </Text>
       <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-      <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+        <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
       </TouchableOpacity>
       <Text></Text>
       <Text style={css.text}>Informar Pagamento</Text>
@@ -67,7 +67,7 @@ function TelaPagamento({ navigation }) {
         data={users}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => pagar(item.id, item.nome, item.receitas, item.despesas, item.obs)}>
+          <TouchableOpacity onPress={() => pagar(item.id, item.nome, item.receitas, item.despesas, item.obs, item.data_val)}>
             <View >
               <View style={css.viewnumero2}>
                 <View style={css.principal2}>
@@ -87,12 +87,12 @@ function TelaPagamento({ navigation }) {
                       </View>
                     </View> */}
                 <View style={css.viewletra}>
-                    <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
-                  <Text style={css.letra3}>Orçamento: {item.nome}</Text>
-                  <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>
-                  <Text style={css.letra3}>Despesas: R$ {item.despesas}</Text>
-                  <Text style={css.letra3}>Observações: {item.obs}</Text>
-                  <Text style={css.letra3}>{item.tempo}</Text>
+                  <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
+                  <Text style={css.letra2}>Receitas: R$ {item.receitas}</Text>
+                  <Text style={css.letra2}>Despesas: R$ {item.despesas}</Text>
+                  <Text style={css.letra2}>Observações: {item.obs}</Text>
+                  <Text style={css.letra2}>Vencimento: {item.data_val}</Text>
+                  <Text style={css.letra2}>{item.tempo}</Text>
                 </View>
               </View>
             </View>
