@@ -10,7 +10,7 @@ function TelaDelete({ navigation }) {
   let token = 'Q!W@ee344%%R';
   useEffect(() => {
     fetch('http://192.168.56.2/api/select/')
-  //fetch('https://api.semlimite.app.br/select/')
+      //fetch('https://api.semlimite.app.br/select/')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => alert('Sem Registro'));
@@ -21,7 +21,7 @@ function TelaDelete({ navigation }) {
     if (a !== '') {
 
       //axios.post('https://api.semlimite.app.br/delete/', { token, a })
-        axios.post('http://192.168.56.2/api/delete/',{token,a})
+      axios.post('http://192.168.56.2/api/delete/', { token, a })
         .then(response => {
           const data = response.data;
         })
@@ -87,10 +87,11 @@ function TelaDelete({ navigation }) {
                       </View>
                     </View> */}
                 <View style={css.viewletra}>
-                    <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
-                  <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>
-                  <Text style={css.letra3}>Despesas: R$ {item.despesas}</Text>
-                  <Text style={css.letra3}>Observações: {item.obs}</Text>
+                  <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
+                  <Text style={css.letra2}>Receitas: R$ {item.receitas}</Text>
+                  <Text style={css.letra2}>Despesas: R$ {item.despesas}</Text>
+                  <Text style={css.letra2}>Observações: {item.obs}</Text>
+                  <Text style={css.letra2}>Vencimento: {item.data_val}</Text>
                   <Text style={css.letra3}>{item.tempo}</Text>
                 </View>
               </View>
