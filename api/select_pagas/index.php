@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para selecionar todos os dados da tabela usuario
-$sql = "SELECT * FROM orcamento_aprovado.orcamento where status=1 order by id desc";
+$sql = "SELECT * FROM orcamento_aprovado.orcamento where status=1 order by data_val asc";
 $result = $conn->query($sql);
 //print_r($result);
 // Verifica se há resultados para a consulta

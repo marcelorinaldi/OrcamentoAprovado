@@ -23,12 +23,13 @@ try {
     $receitas = $data['receitas2'];    
     $despesas = $data['despesas2'];    
     $obs = $data['obs2'];    
-	$tempo = date("Y-m-d H:i:s");	
+	$tempo = date("Y-m-d H:i:s");
+    $data_val = $data['data_validadex'];	
 	
 	
    
     //$sql = "INSERT INTO avaliacao (titulo,nota,mensagem,tempo) VALUES (:titulo,:nota,:mensagem,:tempo)";
-    $sql = "UPDATE `orcamento` SET `nome` = :nome, `receitas`=:receitas,`despesas`=:despesas,`obs`=:obs, dt_edicao=:tempo WHERE (`id` = :a) limit 1";
+    $sql = "UPDATE `orcamento` SET `nome` = :nome, `receitas`=:receitas,`despesas`=:despesas,`obs`=:obs, dt_edicao=:tempo, `data_val`=:data_val WHERE (`id` = :a) limit 1";
 	$stmt = $pdo->prepare($sql);
     $stmt->bindParam(':a', $a);
     $stmt->bindParam(':nome', $nome);
@@ -36,8 +37,7 @@ try {
     $stmt->bindParam(':despesas', $despesas);
     $stmt->bindParam(':obs', $obs);
     $stmt->bindParam(':tempo', $tempo);
-    //$stmt->bindParam(':b', $b);
-    //$stmt->bindParam(':tempo', $tempo);
+    $stmt->bindParam(':data_val', $data_val);
     $stmt->execute();
 
     // Retornar uma resposta ao aplicativo
