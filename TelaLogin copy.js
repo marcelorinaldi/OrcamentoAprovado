@@ -8,6 +8,9 @@ function TelaLogin({ navigation }) {
   const [senhax, setSenhax] = useState('');
   const [users, setUsers] = useState([]);
 
+  const [id, setId] = useState('');
+  const [nome, setNome] = useState('');
+
   useEffect(() => {
     setLoginx('');
     setSenhax('');
@@ -25,14 +28,16 @@ function TelaLogin({ navigation }) {
         if (data && data.length > 0) {
           const primeiroItem = data[0];
           const { id, nome } = primeiroItem;
+          setNome(nome);
+          setId(id);
           navigation.navigate('TelaInicial', { id, nome });
         } else {
-          Alert.alert('Login ou senha incorretos.');
+          alert('Login ou senha incorretos.');
         }
       })
       .catch(error => {
         console.error('Network error:', error);
-        Alert.alert('Erro de rede. Por favor, tente novamente mais tarde.');
+        alert('Erro de rede. Por favor, tente novamente mais tarde.');
       });
   }
 
@@ -40,7 +45,7 @@ function TelaLogin({ navigation }) {
     if (loginx.trim() !== '' && senhax.trim() !== '') {
       autenticar();
     } else {
-      Alert.alert('Por favor, preencha os campos!');
+      alert('Por favor, preencha os campos!');
     }
   }
 
@@ -59,23 +64,12 @@ function TelaLogin({ navigation }) {
       <Text style={css.text}>Bem vindo! Faça login ou cadastre-se!</Text>
       <View>
         <Text>Login</Text>
-        <TextInput
-          style={css.campo}
-          onChangeText={(text) => setLoginx(text)}
-          value={loginx}
-          maxLength={10} // Definindo o máximo de caracteres para 10
-        />
+        <TextInput maxLength={10} style={css.campo} onChangeText={(text) => setLoginx(text)} value={loginx} />
         <Text>Senha</Text>
-        <TextInput
-          style={css.campo}
-          onChangeText={(text) => setSenhax(text)}
-          value={senhax}
-          secureTextEntry={true}
-          maxLength={20} // Definindo o máximo de caracteres para 20
-        />
+        <TextInput maxLength={20} style={css.campo} onChangeText={(text) => setSenhax(text)} value={senhax} secureTextEntry={true} />
         <View style={css.viewbotoes}>
           <View><Button title="Limpar" color="green" onPress={limpar} /></View>
-          <View><Button title="Login" color="green" onPress={logar} /></View>
+          <View><Button title="Login"color="green" onPress={logar} /></View>
           <View><Button title='Cadastro' color="green" onPress={() => navigation.navigate('TelaCadastro')} /></View>
         </View>
       </View>
