@@ -38,7 +38,7 @@ CREATE TABLE `orcamento` (
   `status` varchar(45) DEFAULT NULL,
   `dt_pagamento` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `orcamento` (
 
 LOCK TABLES `orcamento` WRITE;
 /*!40000 ALTER TABLE `orcamento` DISABLE KEYS */;
-INSERT INTO `orcamento` VALUES (1,'ORÇAMENTO1306','RECEITAfcbcvb1306','DESPESAfgbcvfb1306','OBSERVAÇÕEjgnvb1306','0','2024-06-10 10:11:32',NULL,'2024-06-13 09:00:57','2024-06-13 09:00:30','1',NULL),(2,'ORÇAMENTO','RECEITAS','DESPESAS','OBSERVAÇÕES','0','2024-06-10 10:15:52',NULL,'2024-06-12 08:36:21','2024-06-11 10:16:16','1',NULL),(3,'orcamentofinal','receitafinal','despesafinal','obsevaçõesfinais','0','2024-06-11 11:09:57',NULL,NULL,NULL,'1',NULL),(4,'tesdte1206','tesdte1206','tesdte1206','tesdte1206','0','2024-06-12 08:35:45',NULL,NULL,NULL,'1',NULL),(5,'zero','zerop','zero','zero','0','2024-06-12 09:31:35',NULL,NULL,NULL,'0','2024-06-13 10:15:01'),(6,'validade','validade','validade','validade','0','2024-06-12 09:52:38','2024-06-12 09:52:38',NULL,NULL,'0',NULL),(7,'nao deu','nao deu','nao deu','naop deu','0','2024-06-12 09:53:50','2024-06-12 09:53:50',NULL,'2024-06-13 10:43:33','0',NULL),(8,'teste1306','receitas1306','despesas1306','observações1306','0','2024-06-13 09:44:19','2024-06-15 00:00:00',NULL,NULL,'1','2024-06-13 11:22:58'),(9,'pagar1306','pagar1306','pagar1306','pagar1306','0','2024-06-13 10:17:37','2024-06-15 00:00:00',NULL,NULL,'1','2024-06-13 11:17:45'),(10,'pagarrrrrrrr','pagarrrrr','pagarrrrrr','pagarrrrrr','1','2024-06-13 10:19:14','2024-06-15 00:00:00','2024-06-17 11:22:00',NULL,'1','2024-06-17 08:51:23'),(11,'NOME1120','RECEITAS1120','DESPESAS1120','OBSERVAÇÕES1120','0','2024-06-17 11:20:27','2024-06-20 00:00:00',NULL,NULL,'0',NULL);
+INSERT INTO `orcamento` VALUES (1,'casa','500','300','ok','0','2024-06-19 10:05:36','2024-06-25 00:00:00',NULL,NULL,'0',NULL),(2,'compra','563','269','teste','0','2024-06-19 10:06:23','2024-06-29 00:00:00',NULL,NULL,'0',NULL),(3,'internet','100','99','teste','0','2024-06-19 10:07:09','2024-07-10 00:00:00',NULL,NULL,'0',NULL),(4,'arantes','1000','500','rocketleague',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'fsdfsdf','10','5','gdfg',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `orcamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-17 11:24:57
+-- Dump completed on 2024-06-19 10:38:33

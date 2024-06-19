@@ -5,7 +5,7 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
     },
     logo: {
         marginBottom: 20,
@@ -88,12 +88,12 @@ export default StyleSheet.create({
     },
     viewletra: {
         backgroundColor: 'white',
-        width: '80%',
+        width: '90%',
         marginBottom: 10,
         bottom: 0,
         alignItems: 'left',
         justifyContent: 'center',
-        height: 100,
+        height: 130,
         borderRadius: 10,
         borderColor: 'lightgreen',
         borderWidth: 1,
@@ -199,17 +199,17 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-      },
-      drawerItem: {
+    },
+    drawerItem: {
         marginVertical: 10,
         padding: 10,
         backgroundColor: 'lightgrey',
         borderRadius: 5,
-      },
-      drawerText: {
+    },
+    drawerText: {
         fontSize: 18,
         color: 'black',
-      },
+    },
 
     text: {
         color: 'green',
@@ -217,16 +217,12 @@ export default StyleSheet.create({
         fontSize: 18,
     },
 
-    logo: {
-        width: 100,
-        height: 100,
-      },
-      principalinicial: {
+    principalinicial: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         margin: 10,
-      },
-      footerMenu: {
+    },
+    footerMenu: {
         position: 'flex',
         bottom: 0,
         width: '100%',
@@ -234,9 +230,9 @@ export default StyleSheet.create({
         padding: 10,
         flexDirection: 'row',
         justifyContent: 'space-around',
-      },
-      footerMenuItem: {
+    },
+    footerMenuItem: {
         width: 30, // Defina o tamanho das imagens conforme necessário
         height: 30,
-      },
+    },
 });

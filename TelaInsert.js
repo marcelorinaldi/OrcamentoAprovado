@@ -73,7 +73,7 @@ function TelaInsert({ navigation }) {
               </View>
               <View style={css.viewbotoes}>
                 <View><Button title="Limpar" color='green' onPress={limpar} /></View>
-                <View><Button title="Adicionar Produto" color='green' onPress={cadastrar} /></View>
+                <View><Button title="Adicionar" color='green' onPress={cadastrar} /></View>
               </View>
             </View>
           </SafeAreaView>

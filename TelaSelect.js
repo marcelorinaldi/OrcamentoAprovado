@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+  import React, { useState, useEffect } from 'react';
 import { Text, FlatList, TouchableOpacity, View, Image } from 'react-native';
 import css from './estilo/estilo';
 import Menu from './Menu';
