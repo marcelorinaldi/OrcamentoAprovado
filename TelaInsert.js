@@ -43,6 +43,7 @@ function TelaInsert({ navigation }) {
     setData_validade('');
     setObs('');
   }
+  
   return (
     <SafeAreaView>
       <ScrollView>
@@ -54,14 +55,18 @@ function TelaInsert({ navigation }) {
           <SafeAreaView style={css.container}>
             <View>
               <Text style={css.letra2}>Nome</Text>
-              <TextInput placeholder="" style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
+              <TextInput maxLength={20} style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
+
               <Text style={css.letra2}>Receitas R$</Text>
-              <TextInput placeholder="" style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas}></TextInput>
+              <TextInput maxLength={6} style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas}></TextInput>
+
               <Text style={css.letra2}>Despesas R$</Text>
-              <Text></Text><TextInput placeholder="" style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas}></TextInput>
+              <TextInput maxLength={6} style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas}></TextInput>
+              
               <Text style={css.letra2}>Observações</Text>
               <ScrollView style={css.scrollView}>
-                <TextInput style={css.scroll} onChangeText={(text) => setObs(text)} value={obs}></TextInput>
+                <TextInput maxLength={20} style={css.scroll} onChangeText={(text) => setObs(text)} value={obs}></TextInput>
+
               </ScrollView>
               <View style={css.principal}>
                 <Text style={css.letra2}>Data de validade:</Text>
