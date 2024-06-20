@@ -41,17 +41,6 @@ function TelaSelect({ navigation }) {
                 </View>
               </View>
               <View style={css.principal}>
-                {/* <View style={css.viewnumero3}>
-                  <View>
-                    {
-                      item.imagem == "" ? (
-                        <Image source={require('./assets/sem.png')} style={css.icone} />
-                      ) : (
-                        <Image source={{ uri: item.imagem }} style={css.icone} />
-                      )
-                    }
-                  </View>
-                </View> */}
                 <View style={css.viewletra}>
                   <Text style={css.letra3}>{item.nome}</Text>
                   <Text style={css.letra3}>Receitas: R$ {item.receitas}</Text>

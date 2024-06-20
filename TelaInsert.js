@@ -23,7 +23,6 @@ function TelaInsert({ navigation }) {
       var data_validadex = "" + data_validade3 + "-" + data_validade2 + "-" + data_validade;
       console.log("dia:" + data_validadex);
       axios.post('http://192.168.56.2/api/insert/', { token, nome, receitas, despesas, data_validadex, obs })
-        // axios.post('https://api.semlimite.app.br/insert/', { token, nome, valor, imagem, quantidade })
         .then(response => {
           const data = response.data;
           aviso = 0;

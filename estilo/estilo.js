@@ -231,6 +231,15 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
     },
+    Menu2: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        backgroundColor: '#eee',
+        padding: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+    },
     footerMenuItem: {
         width: 30, // Defina o tamanho das imagens conforme necessário
         height: 30,

@@ -1,6 +1,6 @@
 import React, { useCallback, useState, fetchData, useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
-import { useFocusEffect } from '@react-navigation/native'; // Correct import
+import { useFocusEffect } from '@react-navigation/native';
 import css from './estilo/estilo';
 import Menu from './Menu';
 
@@ -15,11 +15,8 @@ function TelaInicial({ navigation, route }) {
     ({ id, nome } = route.params);
   }
 
-
-
   const fetchData = useCallback(() => {
     fetch('http://192.168.56.2/api/inicial/')
-      // fetch('https://api.semlimite.app.br/select/')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => alert('Sem Registro'));
@@ -50,6 +47,15 @@ function TelaInicial({ navigation, route }) {
         <Text style={css.letra2}>Receitas: R$ {receita}</Text>
         <Text style={css.letra2}>Despesas: R$ {despesa}</Text>
       </View>
+      <Text> </Text>
+      <Text> </Text>
+      <Text> </Text>
+      <Text> </Text>
+      <Text> </Text>
+      <Text> </Text>
+      <Text> </Text>
+      <Text> </Text>
+      <Text> </Text>
       <Menu navigation={navigation} />
     </View>
   );

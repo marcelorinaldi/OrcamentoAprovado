@@ -10,7 +10,7 @@ function TelaRetorno({ navigation }) {
   return (
        <View style={css.container} >
  <Image style={{ width:330,height:280}}
-          source={require('./assets/amigao.gif')} />
+          source={require('./assets/orcamento.png')} />
     </View>
   );
 }

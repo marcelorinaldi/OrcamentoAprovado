@@ -17,6 +17,7 @@ import TelaPagas from "./TelaPagas";
 import Menu from "./Menu";
 
 
+
 const Stack = createStackNavigator();
 
 function Navigation() {

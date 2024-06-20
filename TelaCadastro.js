@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Button, TextInput, Alert, TouchableOpacity, Image } from 'react-native';
+import { Text, View, Button, TextInput, Alert, TouchableOpacity, Image, SafeAreaView, ScrollView } from 'react-native';
 import css from './estilo/estilo';
 import axios from 'axios';
 import Menu from './Menu';
@@ -27,10 +27,10 @@ function TelaInsert({ navigation }) {
           });
         navigation.navigate('TelaLogin');
       }else {
-        alert('Preencher Campos!!!');
+        alert('Por favor, preencha todos os campos!');
       }
     }else {
-      alert('Senha diferentes');
+      alert('As senhas não coincidem!');
     }
   }
 
@@ -41,36 +41,34 @@ limpar = () => {
   setSenha2('');
 }
 return (
-  <View style={css.container}>
-    <Text> </Text>
-    <Text> </Text>
-    <TouchableOpacity onPress={() => navigation.navigate('TelaLogin')}>
-      <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
-    </TouchableOpacity>
-
-    <Text style={css.letra}>Novo Usuário</Text>
-    <View>
-      <Text style={css.letra2}>Nome</Text>
-      <TextInput maxLength={20} style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
-      <Text style={css.letra2}>Login</Text>
-      <TextInput maxLength={20} style={css.campo} onChangeText={(text) => setLogin(text)} value={login}></TextInput>
-      <Text style={css.letra2}>Senha</Text>
-      <TextInput maxLength={20} style={css.campo} onChangeText={(text) => setSenha(text)} value={senha}></TextInput>
-      <Text style={css.letra2}>Confirmar Senha</Text>
-      <TextInput maxLength={20} style={css.campo} onChangeText={(text) => setSenha2(text)} value={senha2}></TextInput>
-      <View style={css.viewbotoes}>
-        <View><Button title="Limpar" color="green" onPress={limpar} /></View>
-        <View><Button title="Cadastrar" color="green" onPress={cadastrar} /></View>
+  <SafeAreaView>
+    <ScrollView>
+      <View style={css.container}>
+        <Text> </Text>
+        <Text> </Text>
+        <TouchableOpacity onPress={() => navigation.navigate('TelaLogin')}>
+          <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+        </TouchableOpacity>
+        <Text style={css.letra}>Novo Usuário</Text>
+        <View>
+          <Text style={css.letra2}>Nome</Text>
+          <TextInput maxLength={20} style={css.campo} onChangeText={(text) => setNome(text)} value={nome}></TextInput>
+          <Text style={css.letra2}>Login</Text>
+          <TextInput maxLength={20} style={css.campo} onChangeText={(text) => setLogin(text)} value={login}></TextInput>
+          <Text style={css.letra2}>Senha</Text>
+          <TextInput maxLength={20} secureTextEntry={true} style={css.campo} onChangeText={(text) => setSenha(text)} value={senha}></TextInput>
+          <Text style={css.letra2}>Confirmar Senha</Text>
+          <TextInput maxLength={20} secureTextEntry={true} style={css.campo} onChangeText={(text) => setSenha2(text)} value={senha2}></TextInput>
+          <View style={css.viewbotoes}>
+            <View><Button title="Limpar" color="green" onPress={limpar} /></View>
+            <View><Button title="Cadastrar" color="green" onPress={cadastrar} /></View>
+          </View>
+        </View>
+        <Text> </Text>
+        <Menu navigation={navigation} />
       </View>
-    </View>
-    <Text> </Text>
-    <Text> </Text>
-    <Text> </Text>
-    <Text> </Text>
-    <Text> </Text>
-    <Text> </Text>
-    <Menu navigation={navigation} />
-  </View>
+    </ScrollView>
+  </SafeAreaView>
 );
   }
 export default TelaInsert;

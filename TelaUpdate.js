@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Text, FlatList, TouchableOpacity, View, Button, TextInput, Alert, Image } from 'react-native';
+import { Text, FlatList, TouchableOpacity, View, Button, TextInput, Alert, Image, SafeAreaView, ScrollView } from 'react-native';
 import css from './estilo/estilo';
 import axios, { toFormData } from 'axios';
+import Menu from './Menu';
 
 
 function TelaEditar2({ navigation, route }) {
@@ -102,40 +103,44 @@ function TelaEditar2({ navigation, route }) {
 
 
   return (
-    <View style={css.container}>
-      <Text> </Text>
-      <Text> </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
-        <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
-      </TouchableOpacity>
-
-      <Text></Text>
-      <Text style={css.text}>Editar Orçamento</Text>
-      <View>
-        <Text style={css.letra2}>Orçamento</Text>
-        <TextInput placeholder="Orçamento" style={css.campo} onChangeText={(text) => setNome(text)} value={nome2}></TextInput>
-        <Text style={css.letra2}>Receitas R$</Text>
-        <TextInput placeholder="0.00" style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas2}></TextInput>
-        <Text style={css.letra2}>Despesas R$</Text>
-        <TextInput placeholder="0.00" style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas2}></TextInput>
-        <Text style={css.letra2}>Observações</Text>
-        <TextInput placeholder="Obs:" style={css.campo} onChangeText={(text) => setObs(text)} value={obs2}></TextInput>
-        <View style={css.principal}>
-          <Text style={css.letra2}>Data de validade:</Text>
-          <TextInput placeholder="Dia" style={css.campo2} onChangeText={(text) => setData_validade(text)} value={data_validade}></TextInput>
-          <Text>/</Text>
-          <TextInput placeholder="Mês" style={css.campo2} onChangeText={(text) => setData_validade2(text)} value={data_validade2}></TextInput>
-          <Text>/</Text>
-          <TextInput placeholder="Ano" style={css.campo2} onChangeText={(text) => setData_validade3(text)} value={data_validade3}></TextInput>
-        </View>
-        <View style={css.viewbotoes}>
-          <View><Button title="Limpar" color='green' onPress={limpar} /></View>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={css.container}>
           <Text> </Text>
-          <View><Button title="Atualizar Produto" color='green' onPress={cadastrar} /></View>
+          <Text> </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('TelaInicial')}>
+            <Image source={require('./assets/orcamento.png')} style={css.logo}></Image>
+          </TouchableOpacity>
+          <Text></Text>
+          <Text style={css.text}>Editar Orçamento</Text>
+          <View>
+            <Text style={css.letra2}>Orçamento</Text>
+            <TextInput placeholder="Orçamento" maxLength={20} style={css.campo} onChangeText={(text) => setNome(text)} value={nome2}></TextInput>
+            <Text style={css.letra2}>Receitas R$</Text>
+            <TextInput placeholder="0.00" maxLength={6} style={css.campo} onChangeText={(text) => setReceitas(text)} value={receitas2}></TextInput>
+            <Text style={css.letra2}>Despesas R$</Text>
+            <TextInput placeholder="0.00" maxLength={6} style={css.campo} onChangeText={(text) => setDespesas(text)} value={despesas2}></TextInput>
+            <Text style={css.letra2}>Observações</Text>
+            <TextInput placeholder="Obs:" maxLength={45} style={css.campo} onChangeText={(text) => setObs(text)} value={obs2}></TextInput>
+            <View style={css.principal}>
+              <Text style={css.letra2}>Data de validade:</Text>
+              <TextInput placeholder="Dia" maxLength={2} style={css.campo2} onChangeText={(text) => setData_validade(text)} value={data_validade}></TextInput>
+              <Text>/</Text>
+              <TextInput placeholder="Mês" maxLength={2} style={css.campo2} onChangeText={(text) => setData_validade2(text)} value={data_validade2}></TextInput>
+              <Text>/</Text>
+              <TextInput placeholder="Ano" maxLength={4} style={css.campo2} onChangeText={(text) => setData_validade3(text)} value={data_validade3}></TextInput>
+            </View>
+            <View style={css.viewbotoes}>
+              <View><Button title="Limpar" color='green' onPress={limpar} /></View>
+              <Text> </Text>
+              <View><Button title="Atualizar" color='green' onPress={cadastrar} /></View>
+            </View>
+          </View>
+          <Text> </Text>
+          <Menu navigation={navigation} />
         </View>
-      </View>
-      <Text> </Text>
-    </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 export default TelaEditar2;

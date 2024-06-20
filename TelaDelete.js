@@ -33,8 +33,6 @@ function TelaDelete({ navigation }) {
       alert('Nok');
     }
   }
-
-
   const apagar = (a, b) => {
     Alert.alert(
       'Atenção!',
@@ -75,17 +73,6 @@ function TelaDelete({ navigation }) {
               </View>
 
               <View style={css.principal}>
-                {/* <View style={css.viewnumero3}>
-                  <View>
-                  {
-                    item.imagem == "" ? (
-                      <Image source={require('./assets/sem.png')} style={css.icone} />
-                      ) : (
-                        <Image source={{ uri: `${item.imagem}` }} style={css.icone} />
-                        )
-                      }
-                      </View>
-                    </View> */}
                 <View style={css.viewletra}>
                   <Text style={css.letra2}>{item.id} - {item.nome.substring(0, 32)}</Text>
                   <Text style={css.letra2}>Receitas: R$ {item.receitas}</Text>
